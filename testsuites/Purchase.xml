@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+    <groups>
+        <run>
+            <include name="purchase"/>
+        </run>
+    </groups>
+    <test thread-count="5" name="Submit order Test">
+        <classes>
+            <class name="Velusmarttacademy_Test.Test_suites.Submit_order_Test"/>
+        </classes>
+    </test>
+    <test thread-count="5" name="Error validations Test">
+        <classes>
+            <class name="Velusmarttacademy_Test.Test_suites.Error_validations"/>
+        </classes>
+    </test>
+</suite>
