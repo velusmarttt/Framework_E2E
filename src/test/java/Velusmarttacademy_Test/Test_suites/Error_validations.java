@@ -4,6 +4,7 @@ import Velusmarttacademy_Main.pageobjects.Cart_page;
 import Velusmarttacademy_Main.pageobjects.Checkout;
 import Velusmarttacademy_Main.pageobjects.Product_catalogue;
 import Velusmarttacademy_Test.Test_components.BaseTest;
+import Velusmarttacademy_Test.Test_components.Retry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -13,10 +14,10 @@ import java.util.List;
 
 public class Error_validations extends BaseTest {
 
-    @Test(groups = "ErrorMessage")
+    @Test(groups = {"ErrorMessage"}, retryAnalyzer = Retry.class)
     public void Login_error_validation() {
         try {
-            Product_catalogue productCatalogue = landingpage.login("anshika@gmail.com", "Iamkingss@77000");
+            Product_catalogue productCatalogue = landingpage.login("shetty@gmail.com", "Iamkingss@77000");
             Assert.assertEquals("Incorrect email or password.", landingpage.getErrorMessage());
         } catch (Exception e) {
             System.out.println(e);
@@ -27,7 +28,7 @@ public class Error_validations extends BaseTest {
     public void Verify_Add_to_cart_product_text() {
         try {
             String productName = "ADIDAS ORIGINAL";
-            Product_catalogue productCatalogue = landingpage.login("anshika@gmail.com", "Iamking@000");
+            Product_catalogue productCatalogue = landingpage.login("shetty@gmail.com", "Iamking@000");
             List<WebElement> products = productCatalogue.getProduct_List();
             Cart_page cartPage = productCatalogue.addproductToCart(productName);
             cartPage.navigate_to_cartpage();
