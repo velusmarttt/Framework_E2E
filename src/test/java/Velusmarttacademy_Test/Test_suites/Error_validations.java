@@ -22,6 +22,8 @@ public class Error_validations extends BaseTest {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+
     }
 
     @Test
